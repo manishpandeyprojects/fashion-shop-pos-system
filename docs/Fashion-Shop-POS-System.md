@@ -396,3 +396,34 @@
 - Get feedback from actual shop owners if possible
 - Keep the UI simple and intuitive
 - Prioritize performance and user experience
+
+
+
+
+fashion-shop-pos-system
+
+- Dashboard
+ - Products [add, update, delete]
+ - Category [add, update, delete]
+ - Analytics
+    - Sales
+    - Best selling products
+    - Profit analysis
+ - Expense & Finance
+    - Expense overview
+    - Add Expense
+    - Expense reports
+    - Cash flow analysis
+ - Reports
+    - Daily reports
+    - Weekly reports
+    - Monthly reports
+    - Yearly reports
+ - Orders
+
+Frontend POS system to place the order
+
+I'm using the React router 7 with the shadcn for this
+I will use the supabase for the database.
+Planing to buld this full functional POS system with the proper backend in place.
+I will add more feature in this later 
