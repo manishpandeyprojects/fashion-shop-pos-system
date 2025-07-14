@@ -1,8 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { useState } from "react";
-import { cn } from "~/lib/utils";
 import { Button } from "~/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
+import { Sheet, SheetContent } from "~/components/ui/sheet";
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -23,64 +22,7 @@ import {
   SidebarTrigger,
 } from "~/components/ui/sidebar";
 import { Separator } from "@radix-ui/react-separator";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "~/components/ui/breadcrumb";
-import { AppSidebar } from "~/components/sidebar/app-sidebar";
-
-// Basic navigation structure
-const navigation = [
-  {
-    name: "Dashboard",
-    href: "/",
-    icon: LayoutDashboard,
-  },
-  {
-    name: "Point of Sale",
-    href: "/pos",
-    icon: ShoppingCart,
-  },
-  {
-    name: "Inventory",
-    href: "/inventory",
-    icon: Package,
-  },
-  {
-    name: "Analytics",
-    href: "/analytics",
-    icon: BarChart3,
-  },
-  {
-    name: "Customers",
-    href: "/customers",
-    icon: Users,
-  },
-  {
-    name: "Expenses",
-    href: "/expenses",
-    icon: Wallet,
-  },
-  {
-    name: "Reports",
-    href: "/reports",
-    icon: FileText,
-  },
-  {
-    name: "Insights",
-    href: "/insights",
-    icon: Lightbulb,
-  },
-  {
-    name: "Settings",
-    href: "/settings",
-    icon: Settings,
-  },
-];
+import { AppSidebar } from "~/components/custom/sidebar/AppSidebar";
 
 export default function RootLayout() {
   const location = useLocation();
@@ -102,7 +44,6 @@ export default function RootLayout() {
 
       {/* Main content */}
       <div className="flex flex-col w-0 flex-1 md:ml-64">
-        {/* Top bar */}
         <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow-sm border-b border-gray-200">
           <Button
             variant="ghost"
@@ -119,23 +60,9 @@ export default function RootLayout() {
           </div>
         </div>
 
-        {/* Page content */}
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
           <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="#">
-                      Building Your Application
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator className="hidden md:block" />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
               <Outlet />
             </div>
           </div>
